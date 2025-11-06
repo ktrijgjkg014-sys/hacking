@@ -1,0 +1,14 @@
+$ next build
+   ▲ Next.js 15.3.2
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.0s
+   Linting and checking validity of types ...
+
+Failed to compile.
+
+./src/app/articles/[slug]/page.tsx
+89:15  Error: Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+error: script "build" exited with code 1

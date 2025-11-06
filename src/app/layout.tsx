@@ -3,10 +3,9 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import ClientBody from "./ClientBody"
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  display: "swap", // Mejora el rendimiento de carga de fuentes
-})
+const inter = { 
+  className: "font-mono" // Monospace para estilo terminal
+}
 
 export const metadata: Metadata = {
   title: "Hacking & Pentesting Blog",
@@ -18,8 +17,7 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "#111827" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
 }
 
@@ -29,12 +27,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <head>
-        {/* Asegurar que Tailwind se cargue correctamente */}
-        <link rel="preload" href="/globals.css" as="style" />
-      </head>
-      <body className={inter.className} suppressHydrationWarning>
+    <html lang="es" className="dark">
+      <body className={inter.className}>
         <ClientBody>
           {children}
         </ClientBody>

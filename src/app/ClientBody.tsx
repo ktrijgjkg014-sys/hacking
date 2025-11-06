@@ -7,19 +7,13 @@ export default function ClientBody({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    // Asegurar que los estilos de Tailwind se apliquen correctamente
-    document.documentElement.classList.add('antialiased');
+    // Aplicar tema HACKING: siempre oscuro con verde fosforescente
+    document.documentElement.classList.add('dark', 'antialiased');
     document.body.classList.add('antialiased');
     
-    // Aplicar clases de tema inicial
-    const root = document.documentElement;
-    
-    // Verificar si el usuario prefiere tema oscuro
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
+    // Forzar fondo negro y texto verde
+    document.body.style.backgroundColor = '#000000';
+    document.body.style.color = '#00ff00';
   }, []);
 
   return <>{children}</>;
