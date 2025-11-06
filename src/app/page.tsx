@@ -3,30 +3,30 @@ import { FileText, Clock, User, Tag, Terminal } from "lucide-react"
 
 const articles = [
   {
-    slug: "introduccion-pentesting",
-    title: "Introducción al Pentesting: Metodología y Fases",
-    description: "Aprende las bases del pentesting profesional, sus fases metodológicas y las mejores prácticas para realizar auditorías de seguridad efectivas.",
-    author: "Security Research Team",
-    category: "Pentesting",
+    slug: "",
+    title: "Vibe Hacking en Kali Linux: Automatización Cognitiva con Nmap y LLMs",
+    description: "Profundizamos en la fusión de Nmap y LLMs en entornos avanzados de red teaming.",
+    author: "Codigo",
+    category: "Red Teaming",
     readTime: "15 min",
-    tags: ["pentesting", "metodología", "básico", "seguridad"],
+    tags: ["vibe hacking", "llm", "nmap", "ollama"],
     date: "2025-01-15"
   },
   {
-    slug: "nmap-tecnicas-avanzadas", 
-    title: "Nmap: Técnicas Avanzadas de Escaneo de Redes",
-    description: "Explora técnicas avanzadas de escaneo con Nmap incluyendo evasión de firewalls, NSE scripts y optimización de escaneos a gran escala.",
-    author: "Security Research Team",
-    category: "Network Security",
+    slug: "Hacking letreros Led",
+    title: "vulnerabilidades en controladores LED",
+    description: "Análisis técnico-profesional de vulnerabilidades en controladores LED.",
+    author: "Codigo",
+    category: "Red Teaming",
     readTime: "20 min",
-    tags: ["nmap", "network", "scanning", "firewall"],
+    tags: ["nmap", "IoT hacking", "physical pentesting", "LED signs"],
     date: "2025-01-05"
   },
   {
     slug: "sql-injection-avanzado",
-    title: "SQL Injection Avanzado: Técnicas de Exfiltración", 
+    title: "SQL Injection Avanzado: Técnicas de Exfiltración",
     description: "Domina técnicas avanzadas de SQL Injection incluyendo blind SQLi, time-based attacks y exfiltración de datos en escenarios complejos.",
-    author: "Security Research Team",
+    author: "codigo",
     category: "Web Security",
     readTime: "25 min",
     tags: ["sql-injection", "web", "avanzado", "database"],
@@ -87,8 +87,8 @@ export default function Home() {
         {/* Articles Grid Terminal Style */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
           {articles.map((article, index) => (
-            <article 
-              key={article.slug} 
+            <article
+              key={article.slug}
               className="group card-hacking p-6 rounded-lg hover:scale-105"
               style={{
                 animationDelay: `${index * 0.2}s`
@@ -144,7 +144,7 @@ export default function Home() {
               </div>
 
               {/* Read Button */}
-              <Link 
+              <Link
                 href={`/articles/${article.slug}`}
                 className="inline-flex items-center w-full justify-center px-4 py-3 bg-green-400 text-black rounded font-mono font-bold hover:bg-green-300 transition-all duration-200 shadow-lg hover:shadow-green-400/50"
               >
@@ -165,19 +165,19 @@ export default function Home() {
               </h3>
             </div>
             <p className="text-green-300 max-w-2xl mx-auto mb-6 font-mono">
-              &gt; Este blog está dedicado a profesionales de la ciberseguridad que buscan profundizar 
-              en técnicas avanzadas de pentesting y hacking ético. Todos los contenidos son puramente 
+              &gt; Este blog está dedicado a profesionales de la ciberseguridad que buscan profundizar
+              en técnicas avanzadas de pentesting y hacking ético. Todos los contenidos son puramente
               educativos y están destinados a mejorar la seguridad de las organizaciones.
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-sm">
               {[
-                "PENTESTING ÉTICO", 
-                "ANÁLISIS DE VULNERABILIDADES", 
-                "SEGURIDAD EN REDES", 
-                "WEB APPLICATION SECURITY", 
+                "PENTESTING ÉTICO",
+                "ANÁLISIS DE VULNERABILIDADES",
+                "SEGURIDAD EN REDES",
+                "WEB APPLICATION SECURITY",
                 "METODOLOGÍAS PROFESIONALES"
               ].map((topic, index) => (
-                <span 
+                <span
                   key={topic}
                   className="bg-black text-green-400 border border-green-400 px-3 py-1 rounded font-mono text-xs shadow-sm"
                   style={{ animationDelay: `${index * 0.1}s` }}
