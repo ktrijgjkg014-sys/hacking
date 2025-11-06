@@ -3,7 +3,7 @@ import { FileText, Clock, User, Tag, Terminal } from "lucide-react"
 
 const articles = [
   {
-    slug: "",
+    slug: "vibe-hacking",
     title: "Vibe Hacking en Kali Linux: Automatización Cognitiva con Nmap y LLMs",
     description: "Profundizamos en la fusión de Nmap y LLMs en entornos avanzados de red teaming.",
     author: "Codigo",
@@ -13,7 +13,7 @@ const articles = [
     date: "2025-01-15"
   },
   {
-    slug: "Hacking letreros Led",
+    slug: "letreros-led",
     title: "vulnerabilidades en controladores LED",
     description: "Análisis técnico-profesional de vulnerabilidades en controladores LED.",
     author: "Codigo",
