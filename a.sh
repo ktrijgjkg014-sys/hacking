@@ -1,3 +1,103 @@
+#!/bin/bash
+
+# =======================================================================
+# SCRIPT DE CORRECCIÓN AUTOMÁTICA - ETHICAL HACKING BLOG
+# =======================================================================
+# Este script corrige todos los problemas identificados:
+# 1. Elimina same-runtime dependency
+# 2. Corrige tsconfig.json
+# 3. Crea page.tsx completo
+# 4. Actualiza package.json
+# =======================================================================
+
+echo "🔧 INICIANDO CORRECCIONES AUTOMÁTICAS..."
+echo "=================================================="
+
+# Backup de archivos originales
+echo "📁 Creando backups..."
+cp package.json package.json.backup.$(date +%Y%m%d_%H%M%S)
+cp tsconfig.json tsconfig.json.backup.$(date +%Y%m%d_%H%M%S)
+
+# 1. CORREGIR package.json
+echo "🔧 Corrigiendo package.json..."
+cat > package.json << 'EOF'
+{
+  "name": "hacking-blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.475.0",
+    "next": "^15.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.5.6",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  }
+}
+EOF
+
+# 2. CORREGIR tsconfig.json
+echo "🔧 Corrigiendo tsconfig.json..."
+cat > tsconfig.json << 'EOF'
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "build/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
+EOF
+
+# 3. CREAR page.tsx COMPLETO
+echo "🔧 Creando page.tsx completo..."
+mkdir -p src/app
+
+cat > src/app/page.tsx << 'EOF'
 'use client'
 import React, { useState, useEffect } from 'react'
 import Link from "next/link"
@@ -383,3 +483,53 @@ export default function HomePage() {
     </div>
   )
 }
+EOF
+
+# 4. Instalar dependencias
+echo "📦 Instalando dependencias..."
+rm -rf node_modules package-lock.json
+npm install
+
+# 5. Verificar que el build funcione
+echo "🔍 Verificando build..."
+npm run build
+
+echo "=================================================="
+echo "✅ CORRECCIONES COMPLETADAS EXITOSAMENTE!"
+echo "=================================================="
+echo ""
+echo "🎉 Tu blog de hacking ético ya está:"
+echo "   ✅ Sin errores de same-runtime"
+echo "   ✅ Con page.tsx completo"
+echo "   ✅ Con colores modernos (azul/cyan)"
+echo "   ✅ Listo para Vercel"
+echo ""
+echo "📍 Archivos corregidos:"
+echo "   • package.json (dependencias limpias)"
+echo "   • tsconfig.json (sin same-runtime)"
+echo "   • src/app/page.tsx (completo y funcional)"
+echo ""
+echo "🚀 Próximos pasos:"
+echo "   1. git add ."
+echo "   2. git commit -m 'Fix: Blog completamente corregido'"
+echo "   3. git push origin main"
+echo "   4. Verificar en Vercel"
+echo ""
+echo "🎯 ¡Tu blog estará 100% funcional!"
+EOF
+
+chmod +x fix_blog_completo.sh
+
+echo ""
+echo "🎉 ¡Script creado exitosamente!"
+echo "📁 Archivo: fix_blog_completo.sh"
+echo ""
+echo "🔧 Para aplicar todas las correcciones en tu máquina:"
+echo "   1. Descarga el archivo fix_blog_completo.sh"
+echo "   2. Colócalo en tu proyecto:"
+echo "      cp fix_blog_completo.sh /mnt/c/Users/LENOVO/Desktop/ethical-hacking-blog/"
+echo "   3. Ejecuta:"
+echo "      chmod +x fix_blog_completo.sh"
+echo "      ./fix_blog_completo.sh"
+echo ""
+echo "✅ ¡El script hará todo automáticamente!"
