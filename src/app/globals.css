@@ -4,220 +4,58 @@
 
 @layer base {
   :root {
-    /* Tema HACKING: Negro + Verde Fosforescente */
-    --background: 0 0% 0%;           /* Negro puro */
-    --foreground: 120 100% 60%;      /* Verde fosforescente */
-    --card: 0 0% 5%;                 /* Negro muy oscuro */
-    --card-foreground: 120 100% 70%; /* Verde fosforescente brillante */
-    --popover: 0 0% 5%;
-    --popover-foreground: 120 100% 70%;
-    --primary: 120 100% 50%;         /* Verde fosforescente principal */
-    --primary-foreground: 0 0% 0%;   /* Negro para texto sobre verde */
-    --secondary: 120 50% 15%;        /* Verde oscuro */
-    --secondary-foreground: 120 100% 80%;
-    --muted: 0 0% 15%;               /* Gris muy oscuro */
-    --muted-foreground: 120 30% 60%;
-    --accent: 120 100% 40%;          /* Verde brillante */
-    --accent-foreground: 0 0% 0%;
+    /* Tema MODERNO: Azul oscuro + Cian tech - FÁCIL DE LEER */
+    --background: 210 100% 6%;
+    /* Azul muy oscuro */
+    --foreground: 198 100% 85%;
+    /* Cian claro legible */
+    --card: 214 100% 12%;
+    /* Azul oscuro para cards */
+    --card-foreground: 198 100% 90%;
+    /* Cian brillante para texto */
+    --popover: 214 100% 12%;
+    --popover-foreground: 198 100% 90%;
+    --primary: 188 100% 42%;
+    /* Cian tech principal */
+    --primary-foreground: 210 100% 6%;
+    /* Azul oscuro para texto sobre cian */
+    --secondary: 214 100% 20%;
+    /* Azul medio */
+    --secondary-foreground: 198 100% 85%;
+    --muted: 214 100% 15%;
+    /* Gris azulado */
+    --muted-foreground: 198 50% 65%;
+    --accent: 188 100% 52%;
+    /* Cian brillante */
+    --accent-foreground: 210 100% 6%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 120 50% 25%;           /* Borde verde oscuro */
-    --input: 0 0% 15%;
-    --ring: 120 100% 50%;            /* Ring verde fosforescente */
+    --border: 214 100% 25%;
+    /* Borde azul medio */
+    --input: 214 100% 15%;
+    --ring: 188 100% 42%;
+    /* Ring cian tech */
     --radius: 0.5rem;
-    --chart-1: 120 70% 60%;
-    --chart-2: 120 80% 50%;
-    --chart-3: 120 60% 40%;
-    --chart-4: 120 90% 70%;
-    --chart-5: 120 50% 80%;
+    --chart-1: 188 100% 52%;
+    --chart-2: 214 100% 60%;
+    --chart-3: 188 70% 40%;
+    --chart-4: 214 100% 70%;
+    --chart-5: 198 100% 80%;
   }
 
   .dark {
-    /* Ya está en modo oscuro por defecto - tema HACKING */
-    --background: 0 0% 0%;
-    --foreground: 120 100% 60%;
-    --card: 0 0% 5%;
-    --card-foreground: 120 100% 70%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 120 100% 70%;
-    --primary: 120 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 120 50% 15%;
-    --secondary-foreground: 120 100% 80%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 120 30% 60%;
-    --accent: 120 100% 40%;
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 120 50% 25%;
-    --input: 0 0% 15%;
-    --ring: 120 100% 50%;
-    --chart-1: 120 70% 60%;
-    --chart-2: 120 80% 50%;
-    --chart-3: 120 60% 40%;
-    --chart-4: 120 90% 70%;
-    --chart-5: 120 50% 80%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Courier New', monospace; /* Fuente estilo terminal */
-    background: #000000; /* Negro puro */
-    color: #00ff00; /* Verde fosforescente por defecto */
-  }
-  
-  html {
-    background: #000000; /* Negro puro */
-  }
-}
-
-/* Estilos para tema HACKING - Verde Fosforescente */
-.prose {
-  max-width: none;
-  color: #00ff00; /* Verde fosforescente para todo el texto */
-}
-
-.prose h1 {
-  @apply text-4xl font-bold text-green-400 mb-6 mt-8;
-  text-shadow: 0 0 10px #00ff00;
-}
-
-.prose h2 {
-  @apply text-3xl font-bold text-green-400 mb-4 mt-8;
-  text-shadow: 0 0 8px #00ff00;
-}
-
-.prose h3 {
-  @apply text-2xl font-bold text-green-400 mb-3 mt-6;
-  text-shadow: 0 0 6px #00ff00;
-}
-
-.prose p {
-  @apply text-green-300 mb-4 leading-relaxed;
-  text-shadow: 0 0 3px #00ff00;
-}
-
-.prose strong {
-  @apply font-bold text-green-200;
-  text-shadow: 0 0 5px #00ff00;
-}
-
-.prose em {
-  @apply italic text-green-300;
-}
-
-.prose a {
-  @apply text-green-400 hover:text-green-200 underline;
-  text-shadow: 0 0 5px #00ff00;
-}
-
-.prose code {
-  @apply bg-gray-900 text-green-400 px-2 py-1 rounded text-sm font-mono;
-  border: 1px solid #00ff00;
-  box-shadow: 0 0 5px #00ff00;
-}
-
-.prose pre {
-  @apply bg-gray-900 text-green-300 p-4 rounded-lg overflow-x-auto mb-4;
-  border: 2px solid #00ff00;
-  box-shadow: 0 0 10px #00ff00;
-}
-
-.prose pre code {
-  @apply bg-transparent text-green-300 p-0;
-  border: none;
-  box-shadow: none;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-green-400 pl-4 italic text-green-300 mb-4;
-  background: rgba(0, 255, 0, 0.1);
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
-}
-
-.prose table {
-  @apply min-w-full border border-green-400 rounded-lg overflow-hidden;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-}
-
-.prose th {
-  @apply bg-gray-900 border border-green-400 px-4 py-3 text-left font-semibold text-green-200;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-}
-
-.prose td {
-  @apply border border-green-400 px-4 py-3 text-green-300;
-}
-
-.prose ul {
-  @apply list-disc list-inside mb-4 space-y-2 text-green-300;
-}
-
-.prose ol {
-  @apply list-decimal list-inside mb-4 space-y-2 text-green-300;
-}
-
-.prose li {
-  @apply text-green-300;
-}
-
-/* Animaciones y efectos HACKING */
-* {
-  transition: all 0.2s ease-in-out;
-}
-
-/* Efectos de brillo verde fosforescente */
-.glow-green {
-  text-shadow: 0 0 10px #00ff00;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
-  }
-  to {
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-  }
-}
-
-/* Scrollbar personalizada HACKING */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #000000;
-  border: 1px solid #00ff00;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00ff00;
-  border-radius: 6px;
-  box-shadow: 0 0 5px #00ff00;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #00cc00;
-  box-shadow: 0 0 8px #00ff00;
-}
-
-/* Estilos específicos para cards HACKING */
-.card-hacking {
-  background: #000000;
-  border: 2px solid #00ff00;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.card-hacking:hover {
-  box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
-  transform: translateY(-5px);
-}
+    /* Tema moderno optimizado para lectura */
+    --background: 210 100% 6%;
+    --foreground: 198 100% 85%;
+    --card: 214 100% 12%;
+    --card-foreground: 198 100% 90%;
+    --popover: 214 100% 12%;
+    --popover-foreground: 198 100% 90%;
+    --primary: 188 100% 42%;
+    --primary-foreground: 210 100% 6%;
+    --secondary: 214 100% 20%;
+    --secondary-foreground: 198 100% 85%;
+    --muted: 214 100% 15%;
+    --muted-foreground: 198 50% 65%;
+    --accent: 188 100% 52%;
+    --accent-foreground: 210 100% 6%;
