@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ModernLayout from "../components/ModernLayout";
+import ClientBody from "./ClientBody";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     "seguridad informática", "análisis de vulnerabilidades", "redes",
     "hacking ético", "forensics", "OSINT", "explotación", "payloads"
   ],
-  authors: [{ name: "Tu Nombre" }],
-  creator: "Tu Nombre",
-  publisher: "Tu Nombre",
+  authors: [{ name: "MiniMax Agent" }],
+  creator: "MiniMax Agent",
+  publisher: "MiniMax Agent",
   formatDetection: {
     telephone: false,
   },
@@ -92,9 +92,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <ModernLayout>
+        <ClientBody>
           {children}
-        </ModernLayout>
+        </ClientBody>
       </body>
     </html>
   );
