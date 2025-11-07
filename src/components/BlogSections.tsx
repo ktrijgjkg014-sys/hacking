@@ -110,8 +110,8 @@ export default function BlogSections() {
                 <button
                     onClick={() => setActiveSection('cursos')}
                     className={`flex items-center px-6 py-3 rounded-md font-medium transition-all ${activeSection === 'cursos'
-                            ? 'bg-primary text-primary-foreground shadow-md'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                        ? 'bg-primary text-primary-foreground shadow-md'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                         }`}
                 >
                     <GraduationCap className="w-5 h-5 mr-2" />
@@ -120,8 +120,8 @@ export default function BlogSections() {
                 <button
                     onClick={() => setActiveSection('contacto')}
                     className={`flex items-center px-6 py-3 rounded-md font-medium transition-all ${activeSection === 'contacto'
-                            ? 'bg-primary text-primary-foreground shadow-md'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                        ? 'bg-primary text-primary-foreground shadow-md'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                         }`}
                 >
                     <Mail className="w-5 h-5 mr-2" />
@@ -130,8 +130,8 @@ export default function BlogSections() {
                 <button
                     onClick={() => setActiveSection('youtube')}
                     className={`flex items-center px-6 py-3 rounded-md font-medium transition-all ${activeSection === 'youtube'
-                            ? 'bg-primary text-primary-foreground shadow-md'
-                            : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                        ? 'bg-primary text-primary-foreground shadow-md'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                         }`}
                 >
                     <Youtube className="w-5 h-5 mr-2" />

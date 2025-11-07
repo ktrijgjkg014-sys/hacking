@@ -14,19 +14,19 @@ interface ArticlePageProps {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params
-  
+
   try {
     const articlesDir = path.join(process.cwd(), 'content', 'articles')
     const filePath = path.join(articlesDir, `${slug}.md`)
-    
+
     const fileExists = await fs.access(filePath).then(() => true).catch(() => false)
     if (!fileExists) {
       return notFound()
     }
-    
+
     const fileContent = await fs.readFile(filePath, 'utf8')
     const { data: frontmatter, content } = matter(fileContent)
-    
+
     const title = frontmatter.title || 'Artículo sin título'
     const description = frontmatter.description || 'Sin descripción'
     const date = frontmatter.date || 'Sin fecha'
@@ -34,7 +34,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     const category = frontmatter.category || 'Sin categoría'
     const tags = frontmatter.tags || []
     const readTime = frontmatter.readTime || '5 min'
-    
+
     return (
       <div className="min-h-screen bg-black text-green-400 font-mono">
         <div className="max-w-4xl mx-auto px-6 py-12">
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               )}
             </div>
           </div>
-          
+
           <div className="bg-black/50 border border-green-600 p-6 rounded-lg">
             <div className="flex items-center gap-2 mb-6">
               <div className="text-green-400">$</div>
@@ -77,15 +77,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </ReactMarkdown>
             </div>
           </div>
-          
+
           <div className="mt-8 pt-6 border-t border-green-600">
             <div className="flex items-center gap-2">
               <div className="text-green-400">$</div>
               <div className="text-green-400">ls -la</div>
             </div>
             <div className="mt-4">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="inline-flex items-center gap-2 bg-green-900/30 text-green-400 px-4 py-2 rounded border border-green-600 hover:bg-green-900/50 transition-colors glow-green"
               >
                 <span>←</span>
@@ -104,14 +104,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
 export async function generateMetadata({ params }: ArticlePageProps) {
   const { slug } = await params
-  
+
   try {
     const articlesDir = path.join(process.cwd(), 'content', 'articles')
     const filePath = path.join(articlesDir, `${slug}.md`)
-    
+
     const fileContent = await fs.readFile(filePath, 'utf8')
     const { data: frontmatter } = matter(fileContent)
-    
+
     return {
       title: `${frontmatter.title || 'Artículo'} | Blog de Ethical Hacking`,
       description: frontmatter.description || 'Artículo sobre ethical hacking y pentesting',
